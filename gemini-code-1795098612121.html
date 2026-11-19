@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Design-Entwurf · Fliesen Ferlmann GmbH Köln</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        .hero-surface {
+            background-color: #0b172a;
+            background-image:
+                radial-gradient(circle at 85% 20%, rgba(37, 99, 235, 0.24), transparent 45%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+        }
+
+        input[type="range"] {
+            accent-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased selection:bg-blue-700 selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+
+    <!-- 1. Gut sichtbarer Demo-Hinweis-Balken -->
+    <div class="bg-blue-700 text-white text-xs sm:text-sm font-bold py-2.5 px-4 text-center border-b border-blue-800 z-50">
+        UNVERBINDLICHER DESIGN-ENTWURF · Demoseite erstellt von Local Growth Media (Keine aktive Unternehmenswebsite)
+    </div>
+
+    <!-- 2. Top-Kontaktleiste -->
+    <div class="bg-[#07101f] text-slate-200 text-xs font-medium py-2 px-4 border-b border-white/10">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <span>Fliesenleger-Meisterbetrieb & Ausstellung · Heinrich-Rohlmann-Str. 2, 50829 Köln</span>
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="tel:+49221474447" class="text-blue-300 hover:text-white font-bold inline-flex items-center gap-1.5 transition">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                    0221 / 47 44 47
+                </a>
+                <a href="mailto:info@ferlmann.de" class="hover:text-white transition hidden sm:inline">info@ferlmann.de</a>
+                <span class="text-slate-400 hidden lg:inline">Mo–Do: 08:00–15:45 · Fr: 08:00–12:00 Uhr</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Hauptnavigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+            <a href="#start" class="flex items-center gap-3 group min-w-0">
+                <div class="w-11 h-11 rounded-xl bg-blue-700 p-2 grid grid-cols-3 grid-rows-3 gap-0.5 shadow-sm group-hover:bg-blue-800 transition shrink-0">
+                    <span class="bg-white rounded-[2px]"></span>
+                    <span class="bg-blue-300/60 rounded-[2px]"></span>
+                    <span class="bg-white rounded-[2px]"></span>
+                    <span class="bg-blue-300/60 rounded-[2px]"></span>
+                    <span class="bg-white rounded-[2px]"></span>
+                    <span class="bg-white rounded-[2px]"></span>
+                    <span class="bg-white rounded-[2px]"></span>
+                    <span class="bg-white rounded-[2px]"></span>
+                    <span class="bg-blue-300/60 rounded-[2px]"></span>
+                </div>
+                <div class="truncate">
+                    <span class="block text-base sm:text-lg font-extrabold tracking-tight text-slate-900 leading-none truncate">Fliesen Ferlmann</span>
+                    <span class="block text-xs font-semibold text-blue-700 mt-1 truncate">Fliesenleger-Meisterbetrieb · Köln</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-700">
+                <a href="#leistungen" class="hover:text-blue-700 transition">Leistungen</a>
+                <a href="#sortiment" class="hover:text-blue-700 transition">Sortiment & Trends</a>
+                <a href="#ausstellung" class="hover:text-blue-700 transition">Ausstellung & Katalog</a>
+                <a href="#bewertungen" class="hover:text-blue-700 transition">Referenzen</a>
+                <a href="#kontakt" class="hover:text-blue-700 transition">Kontakt</a>
+            </nav>
+
+            <div class="flex items-center gap-2.5 shrink-0">
+                <a href="#rechner" class="bg-blue-700 hover:bg-blue-800 text-white text-xs sm:text-sm font-bold px-3.5 sm:px-4 py-2.5 rounded-xl shadow-sm transition">
+                    Projekt kalkulieren
+                </a>
+                <button id="mobileMenuBtn" type="button" aria-label="Menü öffnen" class="md:hidden p-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile-Menü -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-200 px-4 py-4 space-y-3 text-sm font-semibold text-slate-800">
+            <a href="#leistungen" class="block py-1.5 hover:text-blue-700">Leistungen & Sanierung</a>
+            <a href="#sortiment" class="block py-1.5 hover:text-blue-700">Sortiment & Fliesentrends</a>
+            <a href="#ausstellung" class="block py-1.5 hover:text-blue-700">Ausstellung & Katalog</a>
+            <a href="#bewertungen" class="block py-1.5 hover:text-blue-700">Kundenstimmen</a>
+            <a href="#karriere" class="block py-1.5 hover:text-blue-700">Karriere (Fliesenleger m/w/d)</a>
+            <a href="#kontakt" class="block py-1.5 hover:text-blue-700">Standort & Öffnungszeiten</a>
+        </div>
+    </header>
+
+    <!-- 4. Hero-Bereich mit Nutzenversprechen links & Preis-/Projekt-Vorfilter rechts -->
+    <section id="start" class="hero-surface text-white py-12 sm:py-16 lg:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+
+            <!-- Linke Spalte -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 bg-blue-500/15 border border-blue-400/30 text-blue-200 text-xs font-bold px-3.5 py-1.5 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                    Komm fühlen… Fliesen sind ein Erlebnis · Köln-Ossendorf
+                </div>
+
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-white">
+                    Willkommen bei Fliesen Ferlmann – wir fliesen Ihren <span class="text-blue-400">Traumraum.</span>
+                </h1>
+
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+                    Als Kölner Fliesenleger-Meisterbetrieb begleiten wir Sie von der persönlichen Beratung in unserer Ausstellung bis zur fachgerechten Verlegung und kompletten Badsanierung aus einer Hand.
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-3 pt-1">
+                    <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                        <svg class="w-5 h-5 text-blue-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        <span class="text-sm font-semibold text-slate-100">Fliesenausstellung in Köln</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                        <svg class="w-5 h-5 text-blue-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        <span class="text-sm font-semibold text-slate-100">Komplettbad aus einer Hand</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                        <svg class="w-5 h-5 text-blue-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        <span class="text-sm font-semibold text-slate-100">Naturstein, Mosaik & Großformat</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                        <svg class="w-5 h-5 text-blue-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                        <span class="text-sm font-semibold text-slate-100">Terrassen- & Balkonsanierung</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3 pt-2">
+                    <a href="tel:+49221474447" class="bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-5 py-3.5 rounded-xl inline-flex items-center gap-2 shadow-lg shadow-blue-950/50 transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                        Direkt anrufen: 0221 / 47 44 47
+                    </a>
+                    <button type="button" onclick="openCatalogModal()" class="bg-white/10 hover:bg-white/15 border border-white/15 text-white font-semibold text-sm px-5 py-3.5 rounded-xl transition cursor-pointer">
+                        Fliesenkatalog ansehen
+                    </button>
+                </div>
+            </div>
+
+            <!-- Rechte Spalte: Interaktiver Fliesen- & Badsanierungs-Vorfilter -->
+            <div id="rechner" class="lg:col-span-5 bg-white text-slate-900 rounded-2xl p-6 sm:p-7 shadow-2xl border border-slate-200">
+                <div class="flex items-center justify-between gap-2 mb-1">
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-blue-700">Projekt- & Preis-Vorfilter</span>
+                    <span class="text-[11px] font-semibold bg-blue-50 text-blue-800 px-2.5 py-0.5 rounded-full">Kostenlos & unverbindlich</span>
+                </div>
+                <h2 class="text-xl font-extrabold text-slate-900 mb-4">Richtwert & Beratung anfragen</h2>
+
+                <form action="https://api.web3forms.com/submit" method="POST" id="quoteForm" class="space-y-4">
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                    <input type="hidden" name="subject" value="Neue Projektanfrage über Vorschau Fliesen Ferlmann GmbH">
+                    <input type="hidden" name="geschaetzter_richtwert" id="hiddenEstimate" value="ca. 4.200 €">
+
+                    <!-- Leistungsauswahl -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-2">1. Welches Vorhaben planen Sie?</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button type="button" id="btn-service-fliesen" data-service="fliesen" data-rate="95" class="service-btn bg-blue-700 text-white border border-blue-700 text-xs font-bold py-2.5 px-2 rounded-xl text-center transition cursor-pointer">
+                                Wand & Boden
+                            </button>
+                            <button type="button" id="btn-service-bad" data-service="bad" data-rate="680" class="service-btn bg-slate-50 text-slate-700 border border-slate-200 hover:border-blue-400 text-xs font-bold py-2.5 px-2 rounded-xl text-center transition cursor-pointer">
+                                Badsanierung
+                            </button>
+                            <button type="button" id="btn-service-terrasse" data-service="terrasse" data-rate="135" class="service-btn bg-slate-50 text-slate-700 border border-slate-200 hover:border-blue-400 text-xs font-bold py-2.5 px-2 rounded-xl text-center transition cursor-pointer">
+                                Terrasse / Stein
+                            </button>
+                        </div>
+                        <input type="hidden" name="leistung" id="selectedService" value="Wand- & Bodenfliesen verlegen">
+                    </div>
+
+                    <!-- Umfangs-Slider -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                            <span class="text-xs font-bold text-slate-700">Fläche: <span id="areaDisplay" class="text-blue-700 text-sm font-extrabold">30 m²</span></span>
+                            <span class="bg-blue-700 text-white text-xs font-extrabold px-3 py-1 rounded-lg">
+                                Richtwert: <span id="priceDisplay">ca. 4.200 €</span>
+                            </span>
+                        </div>
+                        <input type="range" id="areaSlider" name="flaeche_qm" min="6" max="120" value="30" class="w-full cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-slate-500 font-medium mt-1">
+                            <span>6 m² (Bad / WC)</span>
+                            <span>35 m² (Wohnbereich)</span>
+                            <span>120 m² (Haus)</span>
+                        </div>
+                    </div>
+
+                    <!-- Zusatzoptionen -->
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <label class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 cursor-pointer hover:border-blue-400">
+                            <input type="checkbox" id="optMaterial" name="inkl_material" value="Ja" checked class="rounded text-blue-700">
+                            <span class="font-semibold text-slate-700">Inkl. Markenfliesen</span>
+                        </label>
+                        <label class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 cursor-pointer hover:border-blue-400">
+                            <input type="checkbox" id="optAltbelag" name="altbelag_entfernen" value="Ja" class="rounded text-blue-700">
+                            <span class="font-semibold text-slate-700">Altbelag entfernen</span>
+                        </label>
+                    </div>
+
+                    <!-- Kontaktdaten -->
+                    <div class="grid sm:grid-cols-2 gap-2.5">
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-700 mb-1">Ihr Name *</label>
+                            <input type="text" name="name" required placeholder="Max Mustermann" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-blue-700">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-700 mb-1">Telefon oder E-Mail *</label>
+                            <input type="text" name="kontakt" required placeholder="0221… oder E-Mail" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-blue-700">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-700 mb-1">Kölner Stadtteil / Kurzbeschreibung (optional)</label>
+                        <input type="text" name="nachricht" placeholder="z. B. Ehrenfeld, Badsanierung inkl. ebenerdiger Dusche" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-blue-700">
+                    </div>
+
+                    <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm py-3.5 px-4 rounded-xl shadow-md transition cursor-pointer">
+                        Unverbindliches Angebot & Termin anfragen →
+                    </button>
+
+                    <p id="formFeedback" class="hidden text-xs font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-lg p-2.5 text-center">
+                        Vielen Dank! Ihre Projektdaten wurden für die Fliesen Ferlmann GmbH erfasst.
+                    </p>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. Vertrauens-Leiste -->
+    <section class="bg-slate-50 border-b border-slate-200 py-6">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+                <span class="block text-xs font-extrabold text-blue-700 uppercase tracking-wide">Meisterbetrieb</span>
+                <span class="block text-sm font-bold text-slate-900 mt-1">Geprüfte Handwerksqualität</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+                <span class="block text-xs font-extrabold text-blue-700 uppercase tracking-wide">Ausstellung Köln</span>
+                <span class="block text-sm font-bold text-slate-900 mt-1">Fliesen live erleben & fühlen</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+                <span class="block text-xs font-extrabold text-blue-700 uppercase tracking-wide">Alles aus einer Hand</span>
+                <span class="block text-sm font-bold text-slate-900 mt-1">Sanitär, Maler & Estrich koordiniert</span>
+            </div>
+            <div class="bg-white border border-amber-300 rounded-xl p-4 text-center">
+                <span class="block text-xs font-extrabold text-amber-700 uppercase tracking-wide">Premiumhändler</span>
+                <span class="block text-sm font-bold text-slate-900 mt-1">Lieblingsfliese.de Partner</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Die drei Kern-Säulen mit direkter Rechner-Vorauswahl -->
+    <section id="leistungen" class="py-16 sm:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="max-w-2xl mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-blue-700">Unsere Kernkompetenzen</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1.5">Fachgerechte Fliesenarbeit & Komplettsanierung in Köln</h2>
+                <p class="text-slate-600 text-base mt-3">
+                    Von der ersten Bemusterung bei Ihnen vor Ort bis zur schlüsselfertigen Übergabe Ihres neuen Bades oder Wohnbereichs.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Säule 1 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-7 flex flex-col justify-between hover:border-blue-300 transition">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-700 text-white flex items-center justify-center mb-5">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 mb-3">Fliesenberatung vom Profi</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Wir bieten Ihnen jederzeit eine kurzfristige und individuelle Beratung bei Ihnen vor Ort oder in unserer Kölner Ausstellung. Als Fliesenleger-Meisterbetrieb schätzen wir die baulichen Möglichkeiten realistisch ein und planen mit Ihnen gemeinsam die Neugestaltung mit Fliesen, Naturstein und Mosaiken.
+                        </p>
+                    </div>
+                    <button type="button" onclick="selectServiceAndScroll('terrasse')" class="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 hover:text-blue-800 cursor-pointer text-left">
+                        Naturstein & Terrasse kalkulieren ↑
+                    </button>
+                </div>
+
+                <!-- Säule 2 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-7 flex flex-col justify-between hover:border-blue-300 transition">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-700 text-white flex items-center justify-center mb-5">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 mb-3">Fliesen verlegen</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Neben der Beratung ist die fachgerechte und einwandfreie Verlegung – inklusive Estricharbeiten, Trockenbau und sauberer Fugengestaltung – unsere Kernkompetenz. Durch kontinuierliche Weiterbildung wählen wir für jeden Wand- und Bodenbelag die optimale Verlegetechnik für dauerhafte Freude an Ihren Fliesen.
+                        </p>
+                    </div>
+                    <button type="button" onclick="selectServiceAndScroll('fliesen')" class="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 hover:text-blue-800 cursor-pointer text-left">
+                        Wand- & Bodenfliesen kalkulieren ↑
+                    </button>
+                </div>
+
+                <!-- Säule 3 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-7 flex flex-col justify-between hover:border-blue-300 transition">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-700 text-white flex items-center justify-center mb-5">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 mb-3">Sanierung aus einer Hand</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Auch bei Instandsetzungen, Terrassen- und Balkonsanierungen oder der Komplettsanierung Ihres Badezimmers profitieren Sie von unserem eingespielten Netzwerk: Sie haben für alle Arbeitsschritte nur einen Ansprechpartner – dank enger Kooperation mit Sanitär, Stahlbauern und Malern.
+                        </p>
+                    </div>
+                    <button type="button" onclick="selectServiceAndScroll('bad')" class="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 hover:text-blue-800 cursor-pointer text-left">
+                        Komplettbad kalkulieren ↑
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Sortiment & Fliesentrends (mit passenden Detail-Aufnahmen) -->
+    <section id="sortiment" class="py-16 sm:py-20 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-blue-400">Sortiment & Fliesentrends</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1.5">Materialvielfalt für Bad, Wohnraum & Terrasse</h2>
+                </div>
+                <p class="text-slate-300 text-sm max-w-md">
+                    Entdecken Sie aktuelle Oberflächen, Formate und fugenarme Lösungen direkt zum Anfassen in unserer Ausstellung.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Karte 1: Bad -->
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden flex flex-col">
+                    <div class="h-48 bg-slate-700 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Badsanierung und Generationenbad in Köln" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-blue-400">Bad & Generationenbad</span>
+                            <h3 class="text-lg font-extrabold text-white mt-1">Barrierefreie Bäder & Ablagen</h3>
+                            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+                                Bodengleiche Duschen, rutschhemmende Bodenfliesen, beleuchtete Wandnischen und maßgefertigte Ablagen für langfristigen Komfort.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Karte 2: Großformat & Bodenfliesen im Innenraum -->
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden flex flex-col">
+                    <div class="h-48 bg-slate-700 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Großformat Bodenfliesen im Wohnraum" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-blue-400">Wohnräume & Fußbodenheizung</span>
+                            <h3 class="text-lg font-extrabold text-white mt-1">Betonoptik, Holzoptik & Großformat</h3>
+                            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+                                Ruhige Flächen mit schmalem Fugenbild und optimaler Wärmeleitung für Fußbodenheizungen – pflegeleicht und zeitlos modern.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Karte 3: Terrassenplatten & Naturstein -->
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden flex flex-col">
+                    <div class="h-48 bg-slate-700 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&w=800&q=80" alt="Terrassenplatten und Natursteinbelag" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-blue-400">Naturstein, Mosaik & Außenbereich</span>
+                            <h3 class="text-lg font-extrabold text-white mt-1">Terrassengestaltung & Naturstein</h3>
+                            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+                                Frostsichere Terrassen- und Balkonbeläge, edle Natursteinplatten sowie Akzent-Mosaike – fachgerecht abgedichtet und verlegt.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Kundenstimmen aus Köln -->
+    <section id="bewertungen" class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-blue-700">Erfahrungen aus Köln</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1.5">Was unsere Kunden über Fliesen Ferlmann sagen</h2>
+                </div>
+                <span class="text-xs font-bold text-slate-700 bg-slate-100 border border-slate-200 px-3.5 py-2 rounded-xl self-start md:self-auto">
+                    Meisterbetrieb · Komplettbad & Fliesenverlegung
+                </span>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-500 mb-3" aria-label="5 von 5 Sternen">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-sm text-slate-700 leading-relaxed">„Tolle Auswahl in der Ausstellung in Ossendorf und eine extrem saubere Verlegung der Großformatfliesen in unserem neuen Bad. Absolut zuverlässig.“</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-200 text-xs font-bold text-slate-900">
+                        Familie M. · Köln-Ehrenfeld
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-500 mb-3" aria-label="5 von 5 Sternen">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-sm text-slate-700 leading-relaxed">„Die Komplettsanierung unseres Badezimmers lief reibungslos. Alle Gewerke waren sauber aufeinander abgestimmt und der Zeitplan wurde exakt eingehalten.“</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-200 text-xs font-bold text-slate-900">
+                        T. Becker · Köln-Lindenthal
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-500 mb-3" aria-label="5 von 5 Sternen">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-sm text-slate-700 leading-relaxed">„Unsere Dachterrasse wurde inklusive Abdichtung und neuen Feinsteinzeugplatten saniert. Top Beratung vor Ort und erstklassige Handwerksarbeit.“</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-200 text-xs font-bold text-slate-900">
+                        K. Schmitz · Köln-Nippes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Ausstellung & Aktueller Katalog + Karriere -->
+    <section id="ausstellung" class="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8">
+
+            <!-- Neuer Katalog & Ausstellung -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-7 sm:p-8 shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="inline-block text-xs font-extrabold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full">Ausstellung & Katalog</span>
+                    <h3 class="text-2xl font-extrabold text-slate-900 mt-3">Fliesen erleben in unserer Ausstellung in Köln</h3>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed mt-3">
+                        In unserem aktuellen Katalog sowie direkt vor Ort in der Heinrich-Rohlmann-Straße 2 zeigen wir Ihnen eine große Auswahl an Wandfliesen, Bodenfliesen, Mosaiken, Naturstein und Terrassenbelägen. Gerne senden wir Ihnen auf Wunsch auch ein gedrucktes Exemplar zu.
+                    </p>
+                    <div class="mt-5 p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-wrap items-center justify-between gap-4">
+                        <div>
+                            <span class="block text-sm font-bold text-slate-900">Aktueller Fliesenkatalog</span>
+                            <span class="block text-xs text-slate-500 mt-0.5">Online-Einblick & kostenloser Postversand</span>
+                        </div>
+                        <button type="button" onclick="openCatalogModal()" class="bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl shrink-0 transition cursor-pointer">
+                            Katalog öffnen / bestellen
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+                    <div class="text-xs text-slate-600">
+                        <strong class="text-slate-900">Premiumhändler</strong> · Partner von <span class="font-bold text-amber-700">Lieblingsfliese.de</span>
+                    </div>
+                    <a href="tel:+49221474447" class="text-xs font-bold text-blue-700 hover:underline">
+                        Ausstellungstermin vereinbaren →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Karriere / Aktuelles -->
+            <div id="karriere" class="bg-white border border-slate-200 rounded-2xl p-7 sm:p-8 shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="inline-block text-xs font-extrabold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full">Aktuelles · Karriere</span>
+                    <h3 class="text-2xl font-extrabold text-slate-900 mt-3">Fliesenleger (m/w/d) gesucht!</h3>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed mt-3">
+                        Zur Verstärkung unseres sympathischen Teams in Köln suchen wir ab sofort engagierte Fliesenleger (m/w/d). Es erwarten Sie abwechslungsreiche Privat- und Sanierungsprojekte im Raum Köln, hochwertige Materialien und ein kollegiales Meisterbetriebs-Team.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-sm text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-blue-700 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                            Unbefristete Festanstellung in Köln-Ossendorf
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-blue-700 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                            Kurzbewerbung unkompliziert per E-Mail oder Telefon
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-6 pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+                    <span class="text-xs text-slate-500">Direktkontakt: info@ferlmann.de</span>
+                    <a href="mailto:info@ferlmann.de?subject=Bewerbung%20als%20Fliesenleger%20(m/w/d)" class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition">
+                        Jetzt per E-Mail bewerben
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 10. Standort, Öffnungszeiten & Kontakt -->
+    <section id="kontakt" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="bg-[#0b172a] text-white rounded-3xl p-8 sm:p-10 grid lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-4">
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-blue-400">Standort & Öffnungszeiten</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Besuchen Sie Fliesen Ferlmann in Köln</h2>
+                    <p class="text-slate-300 text-sm sm:text-base max-w-xl">
+                        Kommen Sie gerne während unserer Öffnungszeiten in unsere Ausstellung oder vereinbaren Sie einen individuellen Beratungstermin bei Ihnen zu Hause.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2 text-sm">
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                            <span class="block text-xs font-bold uppercase text-blue-300 mb-1">Adresse & Kontakt</span>
+                            <p class="font-bold text-white">Fliesen Ferlmann GmbH</p>
+                            <p class="text-slate-300">Heinrich-Rohlmann-Str. 2<br>50829 Köln</p>
+                            <p class="mt-2 text-slate-200">
+                                Tel.: <a href="tel:+49221474447" class="font-bold text-white hover:underline">0221 / 47 44 47</a><br>
+                                Tel.: <a href="tel:+492203898870" class="font-bold text-white hover:underline">02203 / 898 870</a><br>
+                                E-Mail: <a href="mailto:info@ferlmann.de" class="text-blue-300 hover:underline">info@ferlmann.de</a>
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                            <span class="block text-xs font-bold uppercase text-blue-300 mb-1">Öffnungszeiten</span>
+                            <p class="text-slate-200">
+                                <strong class="text-white">Montag – Donnerstag:</strong><br>
+                                08:00 – 15:45 Uhr
+                            </p>
+                            <p class="text-slate-200 mt-2">
+                                <strong class="text-white">Freitag:</strong><br>
+                                08:00 – 12:00 Uhr
+                            </p>
+                            <p class="text-xs text-blue-200 mt-2">
+                                Sowie jederzeit nach telefonischer Vereinbarung.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anfahrts- & Kartenkarte -->
+                <div class="lg:col-span-5 bg-white text-slate-900 rounded-2xl p-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                        </div>
+                        <div>
+                            <span class="block text-sm font-extrabold text-slate-900">Köln-Ossendorf / Gewerbegebiet</span>
+                            <span class="block text-xs text-slate-500">Heinrich-Rohlmann-Str. 2 · Gute Parkmöglichkeiten</span>
+                        </div>
+                    </div>
+
+                    <div class="rounded-xl bg-slate-100 border border-slate-200 p-4 text-xs text-slate-600 space-y-2">
+                        <p><strong class="text-slate-900">Anfahrt:</strong> Direkt erreichbar über die Hugo-Eckener-Straße / Von-Hünefeld-Straße in Köln-Ossendorf (nahe A57 / Militärring).</p>
+                        <p><strong class="text-slate-900">Einsatzgebiet:</strong> Gesamtes Kölner Stadtgebiet (Ehrenfeld, Nippes, Lindenthal, Sülz, Rodenkirchen, Porz) und Umgebung.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-2.5">
+                        <a href="https://maps.google.com/?q=Fliesen+Ferlmann+GmbH+Heinrich-Rohlmann-Str.+2+50829+Koeln" target="_blank" rel="noopener noreferrer" class="flex-1 bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold py-3 px-4 rounded-xl text-center transition">
+                            Route in Google Maps öffnen
+                        </a>
+                        <a href="#rechner" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-900 text-xs font-bold py-3 px-4 rounded-xl text-center transition">
+                            Zum Preisrechner ↑
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Footer mit klickbarem Impressum & Datenschutz -->
+    <footer class="bg-slate-950 text-slate-400 text-xs py-8 mt-auto border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <span class="text-white font-bold">Fliesen Ferlmann GmbH</span> · Heinrich-Rohlmann-Str. 2, 50829 Köln · Tel.: 0221 / 47 44 47
+            </div>
+            <div class="flex flex-wrap items-center gap-5">
+                <button type="button" onclick="openLegalModal('impressum')" class="hover:text-white transition cursor-pointer">Impressum</button>
+                <button type="button" onclick="openLegalModal('datenschutz')" class="hover:text-white transition cursor-pointer">Datenschutz</button>
+                <span class="text-blue-400 font-semibold">Design-Vorschau · Local Growth Media</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal 1: Katalog-Vorschau & Post-Bestellung -->
+    <div id="catalogModal" class="hidden fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-xs flex items-center justify-center p-4">
+        <div class="bg-white text-slate-900 rounded-2xl max-w-lg w-full p-6 sm:p-7 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
+                <div>
+                    <span class="text-[11px] font-extrabold uppercase tracking-wider text-blue-700">Fliesen Ferlmann GmbH</span>
+                    <h3 class="text-lg font-extrabold text-slate-900">Aktueller Fliesenkatalog</h3>
+                </div>
+                <button type="button" onclick="closeCatalogModal()" class="text-slate-500 hover:text-blue-700 font-extrabold text-sm px-2 py-1 cursor-pointer">Schließen ✕</button>
+            </div>
+
+            <div class="space-y-4 text-sm text-slate-700">
+                <p>Entdecken Sie unsere aktuellen Kollektionen für <strong>Wandfliesen, Bodenfliesen, Großformate, Naturstein, Mosaik</strong> sowie frostsichere <strong>Terrassenplatten</strong>.</p>
+
+                <div class="grid grid-cols-2 gap-2.5 text-xs">
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
+                        <strong class="block text-slate-900">Kapitel 1 · Bad & Wellness</strong>
+                        <span class="text-slate-600">Generationenbäder, Großformat & Mosaik-Akzente</span>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
+                        <strong class="block text-slate-900">Kapitel 2 · Wohnen & Außen</strong>
+                        <span class="text-slate-600">Betonoptik, Holzoptik, Naturstein & Terrasse</span>
+                    </div>
+                </div>
+
+                <form onsubmit="event.preventDefault(); this.innerHTML='<div class=\'bg-emerald-50 border border-emerald-200 text-emerald-900 p-4 rounded-xl text-xs font-bold\'>Vielen Dank! Ihre Katalog-Anforderung an Fliesen Ferlmann GmbH wurde erfasst.</div>';" class="space-y-3 pt-2 border-t border-slate-100">
+                    <div class="text-xs font-extrabold text-slate-900">Gedrucktes Exemplar kostenlos anfordern:</div>
+                    <input type="text" required placeholder="Ihr Vor- und Nachname *" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-blue-700">
+                    <input type="text" required placeholder="Straße, Hausnummer, PLZ & Ort *" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-blue-700">
+                    <input type="email" placeholder="E-Mail-Adresse (optional für PDF-Link)" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-blue-700">
+                    <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs sm:text-sm py-3 rounded-xl transition cursor-pointer">
+                        Katalog kostenlos zusenden lassen
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Rechtliches (Impressum & Datenschutz) -->
+    <div id="legalModal" class="hidden fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-xs flex items-center justify-center p-4">
+        <div class="bg-white text-slate-900 rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 max-h-[85vh] overflow-y-auto">
+            <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
+                <h3 id="legalModalTitle" class="text-lg font-extrabold text-slate-900">Impressum</h3>
+                <button type="button" onclick="closeLegalModal()" class="text-slate-500 hover:text-blue-700 font-extrabold text-sm px-2 py-1 cursor-pointer">Schließen ✕</button>
+            </div>
+            <div id="legalModalBody" class="text-xs sm:text-sm text-slate-700 space-y-3 leading-relaxed"></div>
+        </div>
+    </div>
+
+    <!-- Interaktive Rechner-, Modal- & Menü-Logik -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const serviceBtns = document.querySelectorAll('.service-btn');
+        const areaSlider = document.getElementById('areaSlider');
+        const areaDisplay = document.getElementById('areaDisplay');
+        const priceDisplay = document.getElementById('priceDisplay');
+        const selectedServiceInput = document.getElementById('selectedService');
+        const hiddenEstimateInput = document.getElementById('hiddenEstimate');
+        const optMaterial = document.getElementById('optMaterial');
+        const optAltbelag = document.getElementById('optAltbelag');
+
+        let currentService = 'fliesen';
+        let currentRate = 95;
+
+        const serviceLabels = {
+            fliesen: 'Wand- & Bodenfliesen verlegen',
+            bad: 'Komplette Badsanierung aus einer Hand',
+            terrasse: 'Terrasse, Balkon & Naturstein'
+        };
+
+        function updateCalculation() {
+            const area = parseInt(areaSlider.value, 10);
+            areaDisplay.textContent = area + ' m²';
+
+            let total = 0;
+            if (currentService === 'bad') {
+                const effectiveArea = Math.min(area, 40);
+                total = 5500 + (effectiveArea * 680);
+            } else {
+                total = area * currentRate;
+            }
+
+            if (optMaterial.checked) {
+                total += area * 45;
+            }
+            if (optAltbelag.checked) {
+                total += area * 28;
+            }
+
+            const rounded = Math.round(total / 50) * 50;
+            const formatted = 'ca. ' + rounded.toLocaleString('de-DE') + ' €';
+            priceDisplay.textContent = formatted;
+            hiddenEstimateInput.value = formatted;
+        }
+
+        function activateService(serviceKey) {
+            const targetBtn = document.getElementById('btn-service-' + serviceKey);
+            if (!targetBtn) return;
+
+            serviceBtns.forEach(b => {
+                b.classList.remove('bg-blue-700', 'text-white', 'border-blue-700');
+                b.classList.add('bg-slate-50', 'text-slate-700', 'border-slate-200');
+            });
+            targetBtn.classList.remove('bg-slate-50', 'text-slate-700', 'border-slate-200');
+            targetBtn.classList.add('bg-blue-700', 'text-white', 'border-blue-700');
+
+            currentService = serviceKey;
+            currentRate = parseInt(targetBtn.dataset.rate, 10);
+            selectedServiceInput.value = serviceLabels[currentService];
+
+            if (currentService === 'bad' && parseInt(areaSlider.value, 10) > 25) {
+                areaSlider.value = 10;
+            } else if (currentService !== 'bad' && parseInt(areaSlider.value, 10) < 20) {
+                areaSlider.value = 30;
+            }
+            updateCalculation();
+        }
+
+        function selectServiceAndScroll(serviceKey) {
+            activateService(serviceKey);
+            const rechnerEl = document.getElementById('rechner');
+            if (rechnerEl) {
+                rechnerEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        serviceBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                activateService(btn.dataset.service);
+            });
+        });
+
+        areaSlider.addEventListener('input', updateCalculation);
+        optMaterial.addEventListener('change', updateCalculation);
+        optAltbelag.addEventListener('change', updateCalculation);
+        updateCalculation();
+
+        const quoteForm = document.getElementById('quoteForm');
+        const formFeedback = document.getElementById('formFeedback');
+        quoteForm.addEventListener('submit', (e) => {
+            if (quoteForm.querySelector('input[name="access_key"]').value === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+                e.preventDefault();
+                formFeedback.classList.remove('hidden');
+            }
+        });
+
+        function openCatalogModal() {
+            document.getElementById('catalogModal').classList.remove('hidden');
+        }
+        function closeCatalogModal() {
+            document.getElementById('catalogModal').classList.add('hidden');
+        }
+
+        function openLegalModal(type) {
+            const modal = document.getElementById('legalModal');
+            const title = document.getElementById('legalModalTitle');
+            const body = document.getElementById('legalModalBody');
+            if (type === 'impressum') {
+                title.innerText = 'Impressum (Design-Entwurf)';
+                body.innerHTML = `
+                    <p><strong>Angaben gemäß § 5 DDG:</strong><br>Fliesen Ferlmann GmbH<br>Heinrich-Rohlmann-Str. 2<br>50829 Köln</p>
+                    <p><strong>Kontakt:</strong><br>Telefon: 0221 / 47 44 47 · 02203 / 898 870<br>E-Mail: info@ferlmann.de</p>
+                    <p><strong>Zuständige Kammer:</strong><br>Handwerkskammer zu Köln</p>
+                    <p class="text-slate-500">Hinweis: Dies ist ein unverbindlicher Design-Entwurf von Local Growth Media. Im Live-Betrieb werden hier die vollständigen Handelsregister- und USt-IdNr.-Angaben hinterlegt.</p>
+                `;
+            } else {
+                title.innerText = 'Datenschutzhinweis (Design-Entwurf)';
+                body.innerHTML = `
+                    <p><strong>Verantwortliche Stelle:</strong><br>Fliesen Ferlmann GmbH, Heinrich-Rohlmann-Str. 2, 50829 Köln.</p>
+                    <p><strong>Anfrageformular & Projekt-Vorfilter:</strong><br>Ihre eingegebenen Projektdaten werden ausschließlich zur Bearbeitung Ihrer unverbindlichen Angebotsanfrage verwendet und nicht an unbefugte Dritte weitergegeben.</p>
+                `;
+            }
+            modal.classList.remove('hidden');
+        }
+
+        function closeLegalModal() {
+            document.getElementById('legalModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
